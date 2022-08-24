@@ -17,7 +17,7 @@
   changed_when: false
 
 # Install NVIDIA MIG Manager Systemd service
-- name: Install MIG Manager (apt
+- name: Install MIG Manager (apt)
   apt:
     deb: "{{ mig_manager_url_deb }}"
   when:
