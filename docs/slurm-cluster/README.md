@@ -56,6 +56,8 @@ Instructions for deploying a GPU cluster with Slurm
    > Note: Multiple hosts can be added to the `slurm-master` group for high-availability. You must also set
    > `slurm_enable_ha: true` in `config/group_vars/slurm-cluster.yml`. For more information about HA Slurm deployments,
    > see: https://slurm.schedmd.com/quickstart_admin.html#HA
+   
+3.1. If running on a cluster where you intend to configure [Multi-Instance GPU](https://www.nvidia.com/en-us/technologies/multi-instance-gpu/), consult the [Slurm NVML documentation](./nvml.md).
 
 4. Verify the configuration.
 
