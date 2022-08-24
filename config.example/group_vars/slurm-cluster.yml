@@ -19,7 +19,7 @@ slurm_db_password: AlsoReplaceWithASecurePasswordInTheVault
 
 # Auto-detect GPUs using NVML
 # See docs/slurm-cluster/nvml.md for details.
-slurm_autodetect_nvml: true
+slurm_autodetect_nvml: false
 
 # Ensure hosts file generation only runs across slurm cluster
 hosts_add_ansible_managed_hosts_groups: ["slurm-cluster"]
@@ -52,7 +52,7 @@ slurm_allow_ssh_user: []
 # Enable a Slurm compute node to also function as a login node.
 # This is needed for the "single node Slurm cluster" configuration.
 # See docs/slurm-cluster/slurm-single-node.md
-slurm_login_on_compute: false
+slurm_login_on_compute: true
 
 ################################################################################
 # Kubespray - necessary configuration for Docker setup                         #
@@ -66,7 +66,7 @@ dns_late: false
 slurm_configure_etc_hosts: yes
 slurm_cluster_install_cuda: yes
 slurm_cluster_install_nvidia_driver: yes
-slurm_cluster_install_singularity: no
+slurm_cluster_install_singularity: yes
 
 ################################################################################
 # NFS                                                                          #
@@ -91,9 +91,9 @@ nfs_mounts:
 
 # Flags for enable/disable of NFS deployment
 #  - Set up an NFS server on nfs-server?
-slurm_enable_nfs_server: true
+slurm_enable_nfs_server: false
 #  - Mount NFS filesystems on nfs-clients?
-slurm_enable_nfs_client_nodes: true
+slurm_enable_nfs_client_nodes: false
 
 # Inventory host groups to use for NFS server or clients
 nfs_server_group: "slurm-master[0]"
