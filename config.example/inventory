@@ -15,6 +15,7 @@
 #login01    ansible_host=10.0.1.1
 #gpu01      ansible_host=10.0.2.1
 #gpu02      ansible_host=10.0.2.2
+wylong      ansible_host=x.x.x.x
 
 ######
 # KUBERNETES
@@ -44,6 +45,7 @@ kube-node
 ######
 [slurm-master]
 #login01
+wylong
 
 [slurm-nfs]
 #login01
@@ -51,6 +53,7 @@ kube-node
 [slurm-node]
 #gpu01
 #gpu02
+wylong
 
 # The following groups are used to break out individual cluster services onto
 # different nodes. By default, we put all these functions on the cluster head
@@ -82,7 +85,7 @@ slurm-login
 ######
 [all:vars]
 # SSH User
-#ansible_user=ubuntu
-#ansible_ssh_private_key_file='~/.ssh/id_rsa'
+ansible_user=ubuntu
+ansible_ssh_private_key_file='~/.ssh/id_rsa'
 # SSH bastion/jumpbox
 #ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q ubuntu@10.0.0.1"'
